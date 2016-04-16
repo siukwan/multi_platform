@@ -247,11 +247,42 @@ NS_CC_END
 //////////////////////////////////////////////////////////////////////////
 // Local function
 //////////////////////////////////////////////////////////////////////////
+//将窗口信息写入注册表
 static void PVRFrameEnableControlWindow(bool bEnable)
 {
     HKEY hKey = 0;
 
-    // Open PVRFrame control key, if not exist create it.
+	//RegCreateKeyExW:
+	/*
+	函数名称：       RegCreateKeyExW
+	系统要求：       Windows CE 1.0 and later.
+	头文件：         Winreg.h.
+	链接库：         Coredll.lib
+	函数功能：       打开/生成注册表键。
+	
+	参数：
+	第1个参数：    HKEY hKey
+               注册表句柄。CE有4个根键。
+	第2个参数：    LPCWSTR lpSubKey
+               子键的字符串指针。
+	第3个参数：    DWORD Reserved
+               保留设置为0。
+	第4个参数：    LPWSTR lpClass
+               类字符串指针。
+	第5个参数：    DWORD dwOptions
+               键类型。
+	第6个参数：    REGSAM samDesired
+               忽略。设为0。
+	第7个参数：    LPSECURITY_ATTRIBUTES lpSecurityAttributes
+               设置为NULL。
+	第8个参数：    PHKEY phkResult
+               键句柄指针。
+	第9个参数：    LPDWORD lpdwDisposition
+               键类型指针。
+	返回值：       成功：ERROR_SUCCESS 
+               失败：错误类型。
+			   */
+	// Open PVRFrame control key, if not exist create it.
     if(ERROR_SUCCESS != RegCreateKeyExW(HKEY_CURRENT_USER,
         L"Software\\Imagination Technologies\\PVRVFRame\\STARTUP\\",
         0,
