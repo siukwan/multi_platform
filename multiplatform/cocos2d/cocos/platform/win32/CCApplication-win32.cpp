@@ -48,7 +48,7 @@ Application::Application()
 {
     _instance    = GetModuleHandle(nullptr);
     _animationInterval.QuadPart = 0;
-    CC_ASSERT(! sm_pSharedApplication);
+    CC_ASSERT(! sm_pSharedApplication);//增加了断言判断，确保Application的构造函数只能调用一次
     sm_pSharedApplication = this;
 }
 

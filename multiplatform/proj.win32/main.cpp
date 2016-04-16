@@ -13,6 +13,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
     UNREFERENCED_PARAMETER(lpCmdLine);
 
     // create the application instance
-    AppDelegate app;
-    return Application::getInstance()->run();
+	AppDelegate app;
+	//AppDelegate app2;//调用第二次会发生错误
+    return Application::getInstance()->run();//AppDelegate app中已经生成了Application的实例，所以可以直接调用
 }
