@@ -5,6 +5,9 @@ USING_NS_CC;
 
 AppDelegate::AppDelegate() {
 
+	auto a = this;//此处的this与Application中的this地址一样
+	auto tmp = typeid(*this).name();
+	auto b = a;
 }
 
 AppDelegate::~AppDelegate() 
