@@ -84,6 +84,7 @@ int Application::run()
     // Retain glview to avoid glview being released in the while loop
     glview->retain();
 
+	//main loop
     while(!glview->windowShouldClose())
     {
         QueryPerformanceCounter(&nNow);
