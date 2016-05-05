@@ -53,8 +53,8 @@ bool HelloWorld::init()
 
     // add a label shows "Hello World"
     // create and initialize a label
-    
-    auto label = Label::createWithTTF("Siukwan Hello World", "fonts/Marker Felt.ttf", 120);
+    auto labelInfo = LocationManager::testString();
+    auto label = Label::createWithTTF(labelInfo, "fonts/Marker Felt.ttf", 120);
     
     // position the label on the center of the screen
     label->setPosition(Vec2(origin.x + visibleSize.width/2,

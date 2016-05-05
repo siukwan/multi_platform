@@ -180,6 +180,7 @@ THE SOFTWARE.
 #include "platform/CCThread.h"
 #include "platform/CCPlatformConfig.h"
 #include "platform/CCPlatformMacros.h"
+#include "platform/CCGeoLocation.h"//20160420 siukwan add
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     #include "platform/ios/CCApplication-ios.h"
